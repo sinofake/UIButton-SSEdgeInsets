@@ -10,6 +10,33 @@
 
 @implementation UIButton (SSEdgeInsets)
 
+- (void)setImageUpTitleDownWithSpacing:(CGFloat)spacing {
+    // the space between the image and text
+    spacing -= 1/[UIScreen mainScreen].scale;
+    
+    // lower the text and push it left so it appears centered
+    //  below the image
+    CGSize imageSize = self.imageView.frame.size;
+    self.titleEdgeInsets = UIEdgeInsetsMake(0.0, - imageSize.width, - (imageSize.height + spacing), 0.0);
+    
+    // raise the image and push it right so it appears centered
+    //  above the text
+    CGSize titleSize = CGSizeZero;
+#if __IPHONE_OS_VERSION_MIN_REQUIRED >= __IPHONE_7_0
+    titleSize = [self.titleLabel.text sizeWithAttributes:@{NSFontAttributeName: self.titleLabel.font}];
+#else
+    titleSize = [self.titleLabel.text sizeWithFont:self.titleLabel.font];
+#endif
+    
+    self.imageEdgeInsets = UIEdgeInsetsMake(- (titleSize.height + spacing), 0.0, 0.0, - titleSize.width);
+}
+
+- (void)setDefaultImageTitleStyleWithSpacing:(CGFloat)spacing {
+    CGFloat delta = spacing/2.f;
+    self.imageEdgeInsets = UIEdgeInsetsMake(0, -delta, 0, delta);
+    self.titleEdgeInsets = UIEdgeInsetsMake(0, delta, 0, -delta);
+}
+
 - (void)setEdgeInsetsWithType:(SSEdgeInsetsType)edgeInsetsType marginType:(SSMarginType)marginType margin:(CGFloat)margin {
     CGSize itemSize = CGSizeZero;
     if (edgeInsetsType == SSEdgeInsetsTypeTitle) {
@@ -66,7 +93,7 @@
             verticalSignFlag = 1;
         }
             break;
-        case SSSSMarginTypeRightTop:
+        case SSMarginTypeRightTop:
         {
             horizontalSignFlag = 1;
             verticalSignFlag = -1;
@@ -90,26 +117,4 @@
         self.imageEdgeInsets = edgeInsets;
     }
 }
-
-- (void)setImageUpTitleDownWithSpacing:(CGFloat)spacing {
-    // the space between the image and text
-    spacing -= 1/[UIScreen mainScreen].scale;
-    
-    // lower the text and push it left so it appears centered
-    //  below the image
-    CGSize imageSize = self.imageView.frame.size;
-    self.titleEdgeInsets = UIEdgeInsetsMake(0.0, - imageSize.width, - (imageSize.height + spacing), 0.0);
-    
-    // raise the image and push it right so it appears centered
-    //  above the text
-    CGSize titleSize = CGSizeZero;
-#if __IPHONE_OS_VERSION_MIN_REQUIRED >= __IPHONE_7_0
-    titleSize = [self.titleLabel.text sizeWithAttributes:@{NSFontAttributeName: self.titleLabel.font}];
-#else
-    titleSize = [self.titleLabel.text sizeWithFont:self.titleLabel.font];
-#endif
-    
-    self.imageEdgeInsets = UIEdgeInsetsMake(- (titleSize.height + spacing), 0.0, 0.0, - titleSize.width);
-}
-
 @end

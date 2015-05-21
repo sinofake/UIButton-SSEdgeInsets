@@ -11,6 +11,7 @@
 
 @interface ViewController ()
 @property (weak, nonatomic) IBOutlet UIButton *button;
+@property (weak, nonatomic) IBOutlet UIButton *button2;
 
 @end
 
@@ -43,13 +44,20 @@
     [b.imageView setBackgroundColor:[UIColor greenColor]];
     [b.titleLabel setBackgroundColor:[UIColor cyanColor]];
     [self.view addSubview:b];
-    
     [b setImageUpTitleDownWithSpacing:0.f];
     
     
     
     self.button.backgroundColor = [UIColor orangeColor];
     [self.button setEdgeInsetsWithType:SSEdgeInsetsTypeImage marginType:SSMarginTypeLeftTop margin:0.f];
+    
+    
+    [self.button2 setTitleColor:[UIColor lightGrayColor] forState:UIControlStateHighlighted];
+    self.button2.backgroundColor = [UIColor lightGrayColor];
+    self.button2.imageView.backgroundColor = [UIColor magentaColor];
+    self.button2.titleLabel.backgroundColor = [UIColor whiteColor];
+    [self.button2 setDefaultImageTitleStyleWithSpacing:20.f];
+    
 }
 
 - (void)didReceiveMemoryWarning {
