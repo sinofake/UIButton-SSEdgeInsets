@@ -22,7 +22,7 @@
     // raise the image and push it right so it appears centered
     //  above the text
     CGSize titleSize = CGSizeZero;
-#if __IPHONE_OS_VERSION_MIN_REQUIRED >= __IPHONE_7_0
+#if __IPHONE_OS_VERSION_MIN_REQUIRED >= 70000
     titleSize = [self.titleLabel.text sizeWithAttributes:@{NSFontAttributeName: self.titleLabel.font}];
 #else
     titleSize = [self.titleLabel.text sizeWithFont:self.titleLabel.font];
@@ -40,7 +40,7 @@
 - (void)setEdgeInsetsWithType:(SSEdgeInsetsType)edgeInsetsType marginType:(SSMarginType)marginType margin:(CGFloat)margin {
     CGSize itemSize = CGSizeZero;
     if (edgeInsetsType == SSEdgeInsetsTypeTitle) {
-#if __IPHONE_OS_VERSION_MIN_REQUIRED >= __IPHONE_7_0
+#if __IPHONE_OS_VERSION_MIN_REQUIRED >= 70000
         itemSize = [self.titleLabel.text sizeWithAttributes:@{NSFontAttributeName: self.titleLabel.font}];
 #else
         itemSize = [self.titleLabel.text sizeWithFont:self.titleLabel.font];
