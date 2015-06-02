@@ -30,7 +30,7 @@
 
 /* Begin PBXFileReference section */
 		00F529A71B0ADD8100DBEB9D /* ImageUpTitleDownButton.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ImageUpTitleDownButton.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		00F529AB1B0ADD8200DBEB9D /* Info.plis */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = Info.plis; sourceTree = "<group>"; };
+		00F529AB1B0ADD8200DBEB9D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		00F529AC1B0ADD8200DBEB9D /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		00F529AE1B0ADD8200DBEB9D /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		00F529AF1B0ADD8200DBEB9D /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -40,7 +40,7 @@
 		00F529B71B0ADD8200DBEB9D /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		00F529BA1B0ADD8200DBEB9D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		00F529C01B0ADD8200DBEB9D /* ImageUpTitleDownButtonTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ImageUpTitleDownButtonTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		00F529C51B0ADD8200DBEB9D /* Info.plis */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = Info.plis; sourceTree = "<group>"; };
+		00F529C51B0ADD8200DBEB9D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		00F529C61B0ADD8200DBEB9D /* ImageUpTitleDownButtonTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ImageUpTitleDownButtonTests.m; sourceTree = "<group>"; };
 		00F529D01B0ADE4A00DBEB9D /* UIButton+SSEdgeInsets.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIButton+SSEdgeInsets.h"; sourceTree = "<group>"; };
 		00F529D11B0ADE4A00DBEB9D /* UIButton+SSEdgeInsets.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIButton+SSEdgeInsets.m"; sourceTree = "<group>"; };
@@ -104,7 +104,7 @@
 		00F529AA1B0ADD8100DBEB9D /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				00F529AB1B0ADD8200DBEB9D /* Info.plis */,
+				00F529AB1B0ADD8200DBEB9D /* Info.plist */,
 				00F529AC1B0ADD8200DBEB9D /* main.m */,
 			);
 			name = "Supporting Files";
@@ -122,7 +122,7 @@
 		00F529C41B0ADD8200DBEB9D /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				00F529C51B0ADD8200DBEB9D /* Info.plis */,
+				00F529C51B0ADD8200DBEB9D /* Info.plist */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
