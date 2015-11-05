@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9059" systemVersion="15B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9049"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ioN-uK-zrp">
+                                <rect key="frame" x="200" y="188" width="200" height="80"/>
+                                <animations/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="200" id="IBn-wJ-tQO"/>
+                                    <constraint firstAttribute="height" constant="80" id="tvZ-tB-D5y"/>
+                                </constraints>
+                                <state key="normal" title="图片上-标题下" image="demo">
+                                    <color key="titleColor" red="1" green="0.37254901959999998" blue="0.37647058820000001" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FS0-h5-Wp0">
+                                <rect key="frame" x="200" y="308" width="200" height="80"/>
+                                <animations/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="200" id="NlG-PL-de5"/>
+                                    <constraint firstAttribute="height" constant="80" id="Pfx-0J-XmP"/>
+                                </constraints>
+                                <state key="normal" title="图片右-标题左" image="demo">
+                                    <color key="titleColor" red="1" green="0.37254901959999998" blue="0.37647058820000001" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xf8-zs-oHI">
+                                <rect key="frame" x="200" y="428" width="200" height="80"/>
+                                <animations/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="80" id="U86-Fj-Hrc"/>
+                                    <constraint firstAttribute="width" constant="200" id="bW1-QO-0Qr"/>
+                                </constraints>
+                                <state key="normal" image="demo">
+                                    <color key="titleColor" red="1" green="0.37254901959999998" blue="0.37647058820000001" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fUR-Af-NFB">
+                                <rect key="frame" x="200" y="68" width="200" height="80"/>
+                                <animations/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="200" id="4UJ-Ob-YHY"/>
+                                    <constraint firstAttribute="height" constant="80" id="bdT-EE-SAi"/>
+                                </constraints>
+                                <state key="normal" title="默认风格" image="demo">
+                                    <color key="titleColor" red="1" green="0.37254901959999998" blue="0.37647058820000001" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                            </button>
+                        </subviews>
+                        <animations/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="FS0-h5-Wp0" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="1ou-Ye-fef"/>
+                            <constraint firstItem="ioN-uK-zrp" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="31r-9W-4x0"/>
+                            <constraint firstItem="FS0-h5-Wp0" firstAttribute="top" secondItem="ioN-uK-zrp" secondAttribute="bottom" constant="40" id="ZCB-WR-Tu0"/>
+                            <constraint firstItem="ioN-uK-zrp" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="168" id="imr-E1-nBq"/>
+                            <constraint firstItem="fUR-Af-NFB" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="48" id="oOo-GL-Yx1"/>
+                            <constraint firstItem="fUR-Af-NFB" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="oXE-if-h9t"/>
+                            <constraint firstItem="xf8-zs-oHI" firstAttribute="top" secondItem="FS0-h5-Wp0" secondAttribute="bottom" constant="40" id="qtM-jf-moW"/>
+                            <constraint firstItem="xf8-zs-oHI" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="vcw-35-sxs"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="defaultStyleBtn" destination="fUR-Af-NFB" id="4CP-nd-V40"/>
+                        <outlet property="imageRightTitleLeftBtn" destination="FS0-h5-Wp0" id="XEb-hJ-goh"/>
+                        <outlet property="imageUpTitleDownBtn" destination="ioN-uK-zrp" id="LDT-fg-TtP"/>
+                        <outlet property="randomImageBtn" destination="xf8-zs-oHI" id="CXf-QI-fDC"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="303" y="362"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="demo" width="60" height="60"/>
+    </resources>
+</document>

@@ -1,0 +1,429 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		00CCEBAE1BEBB49000BA8EA2 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 00CCEBAD1BEBB49000BA8EA2 /* main.m */; };
+		00CCEBB11BEBB49000BA8EA2 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 00CCEBB01BEBB49000BA8EA2 /* AppDelegate.m */; };
+		00CCEBB41BEBB49000BA8EA2 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 00CCEBB31BEBB49000BA8EA2 /* ViewController.m */; };
+		00CCEBB71BEBB49000BA8EA2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 00CCEBB51BEBB49000BA8EA2 /* Main.storyboard */; };
+		00CCEBB91BEBB49000BA8EA2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 00CCEBB81BEBB49000BA8EA2 /* Assets.xcassets */; };
+		00CCEBBC1BEBB49000BA8EA2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 00CCEBBA1BEBB49000BA8EA2 /* LaunchScreen.storyboard */; };
+		00CCEBC71BEBB49000BA8EA2 /* UIButton_EdgeInsetsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00CCEBC61BEBB49000BA8EA2 /* UIButton_EdgeInsetsTests.m */; };
+		00CCEBD41BEBB55600BA8EA2 /* UIButton+SSEdgeInsets.m in Sources */ = {isa = PBXBuildFile; fileRef = 00CCEBD31BEBB55600BA8EA2 /* UIButton+SSEdgeInsets.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		00CCEBC31BEBB49000BA8EA2 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 00CCEBA11BEBB49000BA8EA2 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 00CCEBA81BEBB49000BA8EA2;
+			remoteInfo = "UIButton+EdgeInsets";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		00CCEBA91BEBB49000BA8EA2 /* UIButton+EdgeInsets.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "UIButton+EdgeInsets.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		00CCEBAD1BEBB49000BA8EA2 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		00CCEBAF1BEBB49000BA8EA2 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		00CCEBB01BEBB49000BA8EA2 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		00CCEBB21BEBB49000BA8EA2 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		00CCEBB31BEBB49000BA8EA2 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		00CCEBB61BEBB49000BA8EA2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		00CCEBB81BEBB49000BA8EA2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		00CCEBBB1BEBB49000BA8EA2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		00CCEBBD1BEBB49000BA8EA2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		00CCEBC21BEBB49000BA8EA2 /* UIButton+EdgeInsetsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "UIButton+EdgeInsetsTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		00CCEBC61BEBB49000BA8EA2 /* UIButton_EdgeInsetsTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UIButton_EdgeInsetsTests.m; sourceTree = "<group>"; };
+		00CCEBC81BEBB49000BA8EA2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		00CCEBD21BEBB55600BA8EA2 /* UIButton+SSEdgeInsets.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIButton+SSEdgeInsets.h"; sourceTree = "<group>"; };
+		00CCEBD31BEBB55600BA8EA2 /* UIButton+SSEdgeInsets.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIButton+SSEdgeInsets.m"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		00CCEBA61BEBB49000BA8EA2 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		00CCEBBF1BEBB49000BA8EA2 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		00CCEBA01BEBB49000BA8EA2 = {
+			isa = PBXGroup;
+			children = (
+				00CCEBAB1BEBB49000BA8EA2 /* UIButton+EdgeInsets */,
+				00CCEBC51BEBB49000BA8EA2 /* UIButton+EdgeInsetsTests */,
+				00CCEBAA1BEBB49000BA8EA2 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		00CCEBAA1BEBB49000BA8EA2 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				00CCEBA91BEBB49000BA8EA2 /* UIButton+EdgeInsets.app */,
+				00CCEBC21BEBB49000BA8EA2 /* UIButton+EdgeInsetsTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		00CCEBAB1BEBB49000BA8EA2 /* UIButton+EdgeInsets */ = {
+			isa = PBXGroup;
+			children = (
+				00CCEBD11BEBB55600BA8EA2 /* UIButton+SSEdgeInsets */,
+				00CCEBAF1BEBB49000BA8EA2 /* AppDelegate.h */,
+				00CCEBB01BEBB49000BA8EA2 /* AppDelegate.m */,
+				00CCEBB21BEBB49000BA8EA2 /* ViewController.h */,
+				00CCEBB31BEBB49000BA8EA2 /* ViewController.m */,
+				00CCEBB51BEBB49000BA8EA2 /* Main.storyboard */,
+				00CCEBB81BEBB49000BA8EA2 /* Assets.xcassets */,
+				00CCEBBA1BEBB49000BA8EA2 /* LaunchScreen.storyboard */,
+				00CCEBBD1BEBB49000BA8EA2 /* Info.plist */,
+				00CCEBAC1BEBB49000BA8EA2 /* Supporting Files */,
+			);
+			path = "UIButton+EdgeInsets";
+			sourceTree = "<group>";
+		};
+		00CCEBAC1BEBB49000BA8EA2 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				00CCEBAD1BEBB49000BA8EA2 /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		00CCEBC51BEBB49000BA8EA2 /* UIButton+EdgeInsetsTests */ = {
+			isa = PBXGroup;
+			children = (
+				00CCEBC61BEBB49000BA8EA2 /* UIButton_EdgeInsetsTests.m */,
+				00CCEBC81BEBB49000BA8EA2 /* Info.plist */,
+			);
+			path = "UIButton+EdgeInsetsTests";
+			sourceTree = "<group>";
+		};
+		00CCEBD11BEBB55600BA8EA2 /* UIButton+SSEdgeInsets */ = {
+			isa = PBXGroup;
+			children = (
+				00CCEBD21BEBB55600BA8EA2 /* UIButton+SSEdgeInsets.h */,
+				00CCEBD31BEBB55600BA8EA2 /* UIButton+SSEdgeInsets.m */,
+			);
+			path = "UIButton+SSEdgeInsets";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		00CCEBA81BEBB49000BA8EA2 /* UIButton+EdgeInsets */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 00CCEBCB1BEBB49000BA8EA2 /* Build configuration list for PBXNativeTarget "UIButton+EdgeInsets" */;
+			buildPhases = (
+				00CCEBA51BEBB49000BA8EA2 /* Sources */,
+				00CCEBA61BEBB49000BA8EA2 /* Frameworks */,
+				00CCEBA71BEBB49000BA8EA2 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "UIButton+EdgeInsets";
+			productName = "UIButton+EdgeInsets";
+			productReference = 00CCEBA91BEBB49000BA8EA2 /* UIButton+EdgeInsets.app */;
+			productType = "com.apple.product-type.application";
+		};
+		00CCEBC11BEBB49000BA8EA2 /* UIButton+EdgeInsetsTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 00CCEBCE1BEBB49000BA8EA2 /* Build configuration list for PBXNativeTarget "UIButton+EdgeInsetsTests" */;
+			buildPhases = (
+				00CCEBBE1BEBB49000BA8EA2 /* Sources */,
+				00CCEBBF1BEBB49000BA8EA2 /* Frameworks */,
+				00CCEBC01BEBB49000BA8EA2 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				00CCEBC41BEBB49000BA8EA2 /* PBXTargetDependency */,
+			);
+			name = "UIButton+EdgeInsetsTests";
+			productName = "UIButton+EdgeInsetsTests";
+			productReference = 00CCEBC21BEBB49000BA8EA2 /* UIButton+EdgeInsetsTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		00CCEBA11BEBB49000BA8EA2 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0710;
+				ORGANIZATIONNAME = "SINOFAKE SINEP";
+				TargetAttributes = {
+					00CCEBA81BEBB49000BA8EA2 = {
+						CreatedOnToolsVersion = 7.1;
+					};
+					00CCEBC11BEBB49000BA8EA2 = {
+						CreatedOnToolsVersion = 7.1;
+						TestTargetID = 00CCEBA81BEBB49000BA8EA2;
+					};
+				};
+			};
+			buildConfigurationList = 00CCEBA41BEBB49000BA8EA2 /* Build configuration list for PBXProject "UIButton+EdgeInsets" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 00CCEBA01BEBB49000BA8EA2;
+			productRefGroup = 00CCEBAA1BEBB49000BA8EA2 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				00CCEBA81BEBB49000BA8EA2 /* UIButton+EdgeInsets */,
+				00CCEBC11BEBB49000BA8EA2 /* UIButton+EdgeInsetsTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		00CCEBA71BEBB49000BA8EA2 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				00CCEBBC1BEBB49000BA8EA2 /* LaunchScreen.storyboard in Resources */,
+				00CCEBB91BEBB49000BA8EA2 /* Assets.xcassets in Resources */,
+				00CCEBB71BEBB49000BA8EA2 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		00CCEBC01BEBB49000BA8EA2 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		00CCEBA51BEBB49000BA8EA2 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				00CCEBD41BEBB55600BA8EA2 /* UIButton+SSEdgeInsets.m in Sources */,
+				00CCEBB41BEBB49000BA8EA2 /* ViewController.m in Sources */,
+				00CCEBB11BEBB49000BA8EA2 /* AppDelegate.m in Sources */,
+				00CCEBAE1BEBB49000BA8EA2 /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		00CCEBBE1BEBB49000BA8EA2 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				00CCEBC71BEBB49000BA8EA2 /* UIButton_EdgeInsetsTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		00CCEBC41BEBB49000BA8EA2 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 00CCEBA81BEBB49000BA8EA2 /* UIButton+EdgeInsets */;
+			targetProxy = 00CCEBC31BEBB49000BA8EA2 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		00CCEBB51BEBB49000BA8EA2 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				00CCEBB61BEBB49000BA8EA2 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		00CCEBBA1BEBB49000BA8EA2 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				00CCEBBB1BEBB49000BA8EA2 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		00CCEBC91BEBB49000BA8EA2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		00CCEBCA1BEBB49000BA8EA2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		00CCEBCC1BEBB49000BA8EA2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = "UIButton+EdgeInsets/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.sinofake.UIButton-EdgeInsets";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		00CCEBCD1BEBB49000BA8EA2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = "UIButton+EdgeInsets/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.sinofake.UIButton-EdgeInsets";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		00CCEBCF1BEBB49000BA8EA2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = "UIButton+EdgeInsetsTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.sinofake.UIButton-EdgeInsetsTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/UIButton+EdgeInsets.app/UIButton+EdgeInsets";
+			};
+			name = Debug;
+		};
+		00CCEBD01BEBB49000BA8EA2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = "UIButton+EdgeInsetsTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.sinofake.UIButton-EdgeInsetsTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/UIButton+EdgeInsets.app/UIButton+EdgeInsets";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		00CCEBA41BEBB49000BA8EA2 /* Build configuration list for PBXProject "UIButton+EdgeInsets" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				00CCEBC91BEBB49000BA8EA2 /* Debug */,
+				00CCEBCA1BEBB49000BA8EA2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		00CCEBCB1BEBB49000BA8EA2 /* Build configuration list for PBXNativeTarget "UIButton+EdgeInsets" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				00CCEBCC1BEBB49000BA8EA2 /* Debug */,
+				00CCEBCD1BEBB49000BA8EA2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		00CCEBCE1BEBB49000BA8EA2 /* Build configuration list for PBXNativeTarget "UIButton+EdgeInsetsTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				00CCEBCF1BEBB49000BA8EA2 /* Debug */,
+				00CCEBD01BEBB49000BA8EA2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 00CCEBA11BEBB49000BA8EA2 /* Project object */;
+}

@@ -44,6 +44,13 @@ typedef NS_ENUM(NSInteger, SSMarginType) {
 - (void)setImageUpTitleDownWithSpacing:(CGFloat)spacing;
 
 /**
+ *  图片在右，标题在左
+ *
+ *  @param spacing image 和 title 之间的间隙
+ */
+- (void)setImageRightTitleLeftWithSpacing:(CGFloat)spacing;
+
+/**
  *  按钮默认风格：图片在标题左边
  *
  *  @param spacing image 和 title 之间的间隙

@@ -8,27 +8,33 @@
 
 #import "UIButton+SSEdgeInsets.h"
 
+#if __IPHONE_OS_VERSION_MIN_REQUIRED >= 70000
+#define SS_SINGLELINE_TEXTSIZE(text, font) [text length] > 0 ? [text \
+sizeWithAttributes:@{NSFontAttributeName:font}] : CGSizeZero;
+#else
+#define SS_SINGLELINE_TEXTSIZE(text, font) [text length] > 0 ? [text sizeWithFont:font] : CGSizeZero;
+#endif
+
 @implementation UIButton (SSEdgeInsets)
 
 - (void)setImageUpTitleDownWithSpacing:(CGFloat)spacing {
-    // the space between the image and text
-    spacing -= 1/[UIScreen mainScreen].scale;
-    
     // lower the text and push it left so it appears centered
     //  below the image
-    CGSize imageSize = self.imageView.frame.size;
+    CGSize imageSize = [self imageForState:UIControlStateNormal].size;
     self.titleEdgeInsets = UIEdgeInsetsMake(0.0, - imageSize.width, - (imageSize.height + spacing), 0.0);
     
     // raise the image and push it right so it appears centered
     //  above the text
-    CGSize titleSize = CGSizeZero;
-#if __IPHONE_OS_VERSION_MIN_REQUIRED >= 70000
-    titleSize = [self.titleLabel.text sizeWithAttributes:@{NSFontAttributeName: self.titleLabel.font}];
-#else
-    titleSize = [self.titleLabel.text sizeWithFont:self.titleLabel.font];
-#endif
-    
+    CGSize titleSize = SS_SINGLELINE_TEXTSIZE([self titleForState:UIControlStateNormal], self.titleLabel.font);
     self.imageEdgeInsets = UIEdgeInsetsMake(- (titleSize.height + spacing), 0.0, 0.0, - titleSize.width);
+}
+
+- (void)setImageRightTitleLeftWithSpacing:(CGFloat)spacing {
+    CGSize imageSize = [self imageForState:UIControlStateNormal].size;
+    self.titleEdgeInsets = UIEdgeInsetsMake(0, - (imageSize.width + spacing), 0, imageSize.width);
+    
+    CGSize titleSize = SS_SINGLELINE_TEXTSIZE([self titleForState:UIControlStateNormal], self.titleLabel.font);
+    self.imageEdgeInsets = UIEdgeInsetsMake(0, titleSize.width, 0, - (titleSize.width + spacing));
 }
 
 - (void)setDefaultImageTitleStyleWithSpacing:(CGFloat)spacing {
@@ -40,21 +46,17 @@
 - (void)setEdgeInsetsWithType:(SSEdgeInsetsType)edgeInsetsType marginType:(SSMarginType)marginType margin:(CGFloat)margin {
     CGSize itemSize = CGSizeZero;
     if (edgeInsetsType == SSEdgeInsetsTypeTitle) {
-#if __IPHONE_OS_VERSION_MIN_REQUIRED >= 70000
-        itemSize = [self.titleLabel.text sizeWithAttributes:@{NSFontAttributeName: self.titleLabel.font}];
-#else
-        itemSize = [self.titleLabel.text sizeWithFont:self.titleLabel.font];
-#endif
+        itemSize = SS_SINGLELINE_TEXTSIZE([self titleForState:UIControlStateNormal], self.titleLabel.font);
     }
     else {
-        itemSize = self.imageView.image.size;
+        itemSize = [self imageForState:UIControlStateNormal].size;
     }
     
     CGFloat horizontalDelta = (CGRectGetWidth(self.frame) - itemSize.width)/2.f - margin;
     CGFloat vertivalDelta = (CGRectGetHeight(self.frame) - itemSize.height)/2.f - margin;
     
-    int horizontalSignFlag = 1;
-    int verticalSignFlag = 1;
+    NSInteger horizontalSignFlag = 1;
+    NSInteger verticalSignFlag = 1;
     
     switch (marginType) {
         case SSMarginTypeTop:

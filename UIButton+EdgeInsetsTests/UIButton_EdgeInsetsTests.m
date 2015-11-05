@@ -1,19 +1,18 @@
 //
-//  ImageUpTitleDownButtonTests.m
-//  ImageUpTitleDownButtonTests
+//  UIButton_EdgeInsetsTests.m
+//  UIButton+EdgeInsetsTests
 //
-//  Created by zhucuirong on 15/5/19.
-//  Copyright (c) 2015年 elong. All rights reserved.
+//  Created by zhucuirong on 15/11/6.
+//  Copyright © 2015年 SINOFAKE SINEP. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
 #import <XCTest/XCTest.h>
 
-@interface ImageUpTitleDownButtonTests : XCTestCase
+@interface UIButton_EdgeInsetsTests : XCTestCase
 
 @end
 
-@implementation ImageUpTitleDownButtonTests
+@implementation UIButton_EdgeInsetsTests
 
 - (void)setUp {
     [super setUp];
@@ -27,7 +26,7 @@
 
 - (void)testExample {
     // This is an example of a functional test case.
-    XCTAssert(YES, @"Pass");
+    // Use XCTAssert and related functions to verify your tests produce the correct results.
 }
 
 - (void)testPerformanceExample {
