@@ -14,7 +14,7 @@
 		00CCEBB91BEBB49000BA8EA2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 00CCEBB81BEBB49000BA8EA2 /* Assets.xcassets */; };
 		00CCEBBC1BEBB49000BA8EA2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 00CCEBBA1BEBB49000BA8EA2 /* LaunchScreen.storyboard */; };
 		00CCEBC71BEBB49000BA8EA2 /* UIButton_EdgeInsetsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00CCEBC61BEBB49000BA8EA2 /* UIButton_EdgeInsetsTests.m */; };
-		00CCEBD41BEBB55600BA8EA2 /* UIButton+SSEdgeInsets.m in Sources */ = {isa = PBXBuildFile; fileRef = 00CCEBD31BEBB55600BA8EA2 /* UIButton+SSEdgeInsets.m */; };
+		00F5AA941BFC436000D5D8CD /* UIButton+SSEdgeInsets.m in Sources */ = {isa = PBXBuildFile; fileRef = 00F5AA931BFC436000D5D8CD /* UIButton+SSEdgeInsets.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -41,8 +41,8 @@
 		00CCEBC21BEBB49000BA8EA2 /* UIButton+EdgeInsetsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "UIButton+EdgeInsetsTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		00CCEBC61BEBB49000BA8EA2 /* UIButton_EdgeInsetsTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UIButton_EdgeInsetsTests.m; sourceTree = "<group>"; };
 		00CCEBC81BEBB49000BA8EA2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		00CCEBD21BEBB55600BA8EA2 /* UIButton+SSEdgeInsets.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIButton+SSEdgeInsets.h"; sourceTree = "<group>"; };
-		00CCEBD31BEBB55600BA8EA2 /* UIButton+SSEdgeInsets.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIButton+SSEdgeInsets.m"; sourceTree = "<group>"; };
+		00F5AA921BFC436000D5D8CD /* UIButton+SSEdgeInsets.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIButton+SSEdgeInsets.h"; sourceTree = "<group>"; };
+		00F5AA931BFC436000D5D8CD /* UIButton+SSEdgeInsets.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIButton+SSEdgeInsets.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,7 +84,8 @@
 		00CCEBAB1BEBB49000BA8EA2 /* UIButton+EdgeInsets */ = {
 			isa = PBXGroup;
 			children = (
-				00CCEBD11BEBB55600BA8EA2 /* UIButton+SSEdgeInsets */,
+				00F5AA921BFC436000D5D8CD /* UIButton+SSEdgeInsets.h */,
+				00F5AA931BFC436000D5D8CD /* UIButton+SSEdgeInsets.m */,
 				00CCEBAF1BEBB49000BA8EA2 /* AppDelegate.h */,
 				00CCEBB01BEBB49000BA8EA2 /* AppDelegate.m */,
 				00CCEBB21BEBB49000BA8EA2 /* ViewController.h */,
@@ -113,15 +114,6 @@
 				00CCEBC81BEBB49000BA8EA2 /* Info.plist */,
 			);
 			path = "UIButton+EdgeInsetsTests";
-			sourceTree = "<group>";
-		};
-		00CCEBD11BEBB55600BA8EA2 /* UIButton+SSEdgeInsets */ = {
-			isa = PBXGroup;
-			children = (
-				00CCEBD21BEBB55600BA8EA2 /* UIButton+SSEdgeInsets.h */,
-				00CCEBD31BEBB55600BA8EA2 /* UIButton+SSEdgeInsets.m */,
-			);
-			path = "UIButton+SSEdgeInsets";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -224,7 +216,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				00CCEBD41BEBB55600BA8EA2 /* UIButton+SSEdgeInsets.m in Sources */,
+				00F5AA941BFC436000D5D8CD /* UIButton+SSEdgeInsets.m in Sources */,
 				00CCEBB41BEBB49000BA8EA2 /* ViewController.m in Sources */,
 				00CCEBB11BEBB49000BA8EA2 /* AppDelegate.m in Sources */,
 				00CCEBAE1BEBB49000BA8EA2 /* main.m in Sources */,
@@ -414,6 +406,7 @@
 				00CCEBCD1BEBB49000BA8EA2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		00CCEBCE1BEBB49000BA8EA2 /* Build configuration list for PBXNativeTarget "UIButton+EdgeInsetsTests" */ = {
 			isa = XCConfigurationList;
@@ -422,6 +415,7 @@
 				00CCEBD01BEBB49000BA8EA2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
