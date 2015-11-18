@@ -16,7 +16,7 @@ Pod::Spec.new do |s|
   #
 
   s.name         = "UIButton-SSEdgeInsets"
-  s.version      = "0.1.0"
+  s.version      = "0.1.1"
   s.summary      = "图片在上，标题在下；标题在左，图片在右；随意调整图片或按钮的位置"
 
   # This description is used to generate tags and improve search results.
@@ -24,8 +24,7 @@ Pod::Spec.new do |s|
   #   * Try to keep it short, snappy and to the point.
   #   * Write the description between the DESC delimiters below.
   #   * Finally, don't worry about the indent, CocoaPods strips it!
-  s.description  = <<-DESC
-                   DESC
+  #   s.description  = <<-DESC    DESC
 
   s.homepage     = "https://github.com/sinofake/UIButton-SSEdgeInsets"
   # s.screenshots  = "www.example.com/screenshots_1.gif", "www.example.com/screenshots_2.gif"
@@ -79,7 +78,7 @@ Pod::Spec.new do |s|
   #  Supports git, hg, bzr, svn and HTTP.
   #
 
-  s.source       = { :git => "https://github.com/sinofake/UIButton-SSEdgeInsets.git", :tag => "0.1.0" }
+  s.source       = { :git => "https://github.com/sinofake/UIButton-SSEdgeInsets.git", :tag => s.version }
 
 
   # ――― Source Code ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
@@ -90,10 +89,10 @@ Pod::Spec.new do |s|
   #  Not including the public_header_files will make all headers public.
   #
 
-  s.source_files  = "Classes", "Classes/**/*.{h,m}"
+  s.source_files  = "UIButton+EdgeInsets/UIButton+SSEdgeInsets.{h,m}"
   s.exclude_files = "Classes/Exclude"
 
-  # s.public_header_files = "Classes/**/*.h"
+  s.public_header_files = "UIButton+EdgeInsets/UIButton+SSEdgeInsets.h"
 
 
   # ――― Resources ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
