@@ -38,7 +38,7 @@
     [self.defaultStyleBtn setDefaultImageTitleStyleWithSpacing:10.f];
     [self.imageUpTitleDownBtn setImageUpTitleDownWithSpacing:0.f];
     [self.imageRightTitleLeftBtn setImageRightTitleLeftWithSpacing:10.f];
-    [self.randomImageBtn setEdgeInsetsWithType:SSEdgeInsetsTypeImage marginType:SSMarginTypeRightBottom margin:0.f];
+    [self.randomImageBtn setEdgeInsetsWithType:SSEdgeInsetsTypeImage marginType:SSMarginTypeBottomRight margin:0.f];
 }
 
 - (void)didReceiveMemoryWarning {

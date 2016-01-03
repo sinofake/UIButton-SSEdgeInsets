@@ -15,13 +15,13 @@ typedef NS_ENUM(NSInteger, SSEdgeInsetsType) {
 
 typedef NS_ENUM(NSInteger, SSMarginType) {
     SSMarginTypeTop         ,
-    SSMarginTypeLeft        ,
     SSMarginTypeBottom      ,
+    SSMarginTypeLeft        ,
     SSMarginTypeRight       ,
-    SSMarginTypeLeftTop     ,
-    SSMarginTypeLeftBottom  ,
-    SSMarginTypeRightTop    ,
-    SSMarginTypeRightBottom
+    SSMarginTypeTopLeft     ,
+    SSMarginTypeTopRight    ,
+    SSMarginTypeBottomLeft  ,
+    SSMarginTypeBottomRight
 };
 
 @interface UIButton (SSEdgeInsets)

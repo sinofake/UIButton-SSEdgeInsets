@@ -65,16 +65,16 @@ sizeWithAttributes:@{NSFontAttributeName:font}] : CGSizeZero;
             verticalSignFlag = -1;
         }
             break;
-        case SSMarginTypeLeft:
-        {
-            horizontalSignFlag = -1;
-            verticalSignFlag = 0;
-        }
-            break;
         case SSMarginTypeBottom:
         {
             horizontalSignFlag = 0;
             verticalSignFlag = 1;
+        }
+            break;
+        case SSMarginTypeLeft:
+        {
+            horizontalSignFlag = -1;
+            verticalSignFlag = 0;
         }
             break;
         case SSMarginTypeRight:
@@ -83,25 +83,26 @@ sizeWithAttributes:@{NSFontAttributeName:font}] : CGSizeZero;
             verticalSignFlag = 0;
         }
             break;
-        case SSMarginTypeLeftTop:
+        case SSMarginTypeTopLeft:
         {
             horizontalSignFlag = -1;
             verticalSignFlag = -1;
         }
             break;
-        case SSMarginTypeLeftBottom:
-        {
-            horizontalSignFlag = -1;
-            verticalSignFlag = 1;
-        }
-            break;
-        case SSMarginTypeRightTop:
+        case SSMarginTypeTopRight:
         {
             horizontalSignFlag = 1;
             verticalSignFlag = -1;
         }
             break;
-        case SSMarginTypeRightBottom:
+        case SSMarginTypeBottomLeft:
+        {
+            horizontalSignFlag = -1;
+            verticalSignFlag = 1;
+        }
+            break;
+        
+        case SSMarginTypeBottomRight:
         {
             horizontalSignFlag = 1;
             verticalSignFlag = 1;
