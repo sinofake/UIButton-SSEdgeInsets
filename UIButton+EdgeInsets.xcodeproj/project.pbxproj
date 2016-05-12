@@ -349,6 +349,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.sinofake.UIButton-EdgeInsets";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "d4040fd9-b01e-42f1-b79e-8acf4b2ce489";
 			};
 			name = Debug;
 		};
@@ -360,6 +361,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.sinofake.UIButton-EdgeInsets";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "d4040fd9-b01e-42f1-b79e-8acf4b2ce489";
 			};
 			name = Release;
 		};

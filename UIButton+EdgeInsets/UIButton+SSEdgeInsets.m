@@ -17,107 +17,111 @@ sizeWithAttributes:@{NSFontAttributeName:font}] : CGSizeZero;
 
 @implementation UIButton (SSEdgeInsets)
 
-- (void)setImageUpTitleDownWithSpacing:(CGFloat)spacing {
-    // lower the text and push it left so it appears centered
-    //  below the image
+- (void)setImagePositionWithType:(SSImagePositionType)type spacing:(CGFloat)spacing {
     CGSize imageSize = [self imageForState:UIControlStateNormal].size;
-    self.titleEdgeInsets = UIEdgeInsetsMake(0.0, - imageSize.width, - (imageSize.height + spacing), 0.0);
-    
-    // raise the image and push it right so it appears centered
-    //  above the text
     CGSize titleSize = SS_SINGLELINE_TEXTSIZE([self titleForState:UIControlStateNormal], self.titleLabel.font);
-    self.imageEdgeInsets = UIEdgeInsetsMake(- (titleSize.height + spacing), 0.0, 0.0, - titleSize.width);
+
+    switch (type) {
+        case SSImagePositionTypeLeft: {
+            CGFloat delta = spacing / 2.f;
+            self.imageEdgeInsets = UIEdgeInsetsMake(0, - delta, 0, delta);
+            self.titleEdgeInsets = UIEdgeInsetsMake(0, delta, 0, - delta);
+            break;
+        }
+        case SSImagePositionTypeRight: {
+            self.titleEdgeInsets = UIEdgeInsetsMake(0, - (imageSize.width + spacing), 0, imageSize.width);
+            self.imageEdgeInsets = UIEdgeInsetsMake(0, titleSize.width, 0, - (titleSize.width + spacing));
+            break;
+        }
+        case SSImagePositionTypeTop: {
+            // lower the text and push it left so it appears centered
+            //  below the image
+            self.titleEdgeInsets = UIEdgeInsetsMake(0, - imageSize.width, - (imageSize.height + spacing), 0);
+            
+            // raise the image and push it right so it appears centered
+            //  above the text
+            self.imageEdgeInsets = UIEdgeInsetsMake(- (titleSize.height + spacing), 0, 0, - titleSize.width);
+            break;
+        }
+        case SSImagePositionTypeBottom: {
+            self.titleEdgeInsets = UIEdgeInsetsMake(- (imageSize.height + spacing), - imageSize.width, 0, 0);
+            self.imageEdgeInsets = UIEdgeInsetsMake(0, 0, - (titleSize.height + spacing), - titleSize.width);
+            break;
+        }
+    }
+}
+
+- (void)setImageUpTitleDownWithSpacing:(CGFloat)spacing {
+    [self setImagePositionWithType:SSImagePositionTypeTop spacing:spacing];
 }
 
 - (void)setImageRightTitleLeftWithSpacing:(CGFloat)spacing {
-    CGSize imageSize = [self imageForState:UIControlStateNormal].size;
-    self.titleEdgeInsets = UIEdgeInsetsMake(0, - (imageSize.width + spacing), 0, imageSize.width);
-    
-    CGSize titleSize = SS_SINGLELINE_TEXTSIZE([self titleForState:UIControlStateNormal], self.titleLabel.font);
-    self.imageEdgeInsets = UIEdgeInsetsMake(0, titleSize.width, 0, - (titleSize.width + spacing));
-}
-
-- (void)setDefaultImageTitleStyleWithSpacing:(CGFloat)spacing {
-    CGFloat delta = spacing/2.f;
-    self.imageEdgeInsets = UIEdgeInsetsMake(0, -delta, 0, delta);
-    self.titleEdgeInsets = UIEdgeInsetsMake(0, delta, 0, -delta);
+    [self setImagePositionWithType:SSImagePositionTypeRight spacing:spacing];
 }
 
 - (void)setEdgeInsetsWithType:(SSEdgeInsetsType)edgeInsetsType marginType:(SSMarginType)marginType margin:(CGFloat)margin {
     CGSize itemSize = CGSizeZero;
     if (edgeInsetsType == SSEdgeInsetsTypeTitle) {
         itemSize = SS_SINGLELINE_TEXTSIZE([self titleForState:UIControlStateNormal], self.titleLabel.font);
-    }
-    else {
+    } else {
         itemSize = [self imageForState:UIControlStateNormal].size;
     }
     
-    CGFloat horizontalDelta = (CGRectGetWidth(self.frame) - itemSize.width)/2.f - margin;
-    CGFloat vertivalDelta = (CGRectGetHeight(self.frame) - itemSize.height)/2.f - margin;
+    CGFloat horizontalDelta = (CGRectGetWidth(self.frame) - itemSize.width) / 2.f - margin;
+    CGFloat vertivalDelta = (CGRectGetHeight(self.frame) - itemSize.height) / 2.f - margin;
     
     NSInteger horizontalSignFlag = 1;
     NSInteger verticalSignFlag = 1;
     
     switch (marginType) {
-        case SSMarginTypeTop:
-        {
+        case SSMarginTypeTop: {
             horizontalSignFlag = 0;
-            verticalSignFlag = -1;
-        }
+            verticalSignFlag = - 1;
             break;
-        case SSMarginTypeBottom:
-        {
+        }
+        case SSMarginTypeBottom: {
             horizontalSignFlag = 0;
             verticalSignFlag = 1;
-        }
             break;
-        case SSMarginTypeLeft:
-        {
-            horizontalSignFlag = -1;
+        }
+        case SSMarginTypeLeft: {
+            horizontalSignFlag = - 1;
             verticalSignFlag = 0;
-        }
             break;
-        case SSMarginTypeRight:
-        {
+        }
+        case SSMarginTypeRight: {
             horizontalSignFlag = 1;
             verticalSignFlag = 0;
-        }
             break;
-        case SSMarginTypeTopLeft:
-        {
-            horizontalSignFlag = -1;
-            verticalSignFlag = -1;
         }
+        case SSMarginTypeTopLeft: {
+            horizontalSignFlag = - 1;
+            verticalSignFlag = - 1;
             break;
-        case SSMarginTypeTopRight:
-        {
+        }
+        case SSMarginTypeTopRight: {
             horizontalSignFlag = 1;
-            verticalSignFlag = -1;
-        }
+            verticalSignFlag = - 1;
             break;
-        case SSMarginTypeBottomLeft:
-        {
-            horizontalSignFlag = -1;
+        }
+        case SSMarginTypeBottomLeft: {
+            horizontalSignFlag = - 1;
             verticalSignFlag = 1;
-        }
             break;
-        
-        case SSMarginTypeBottomRight:
-        {
+        }
+        case SSMarginTypeBottomRight: {
             horizontalSignFlag = 1;
             verticalSignFlag = 1;
+            break;
         }
-            break;
-            
-        default:
-            break;
     }
+    
     UIEdgeInsets edgeInsets = UIEdgeInsetsMake(vertivalDelta * verticalSignFlag, horizontalDelta * horizontalSignFlag, -vertivalDelta * verticalSignFlag, -horizontalDelta * horizontalSignFlag);
     if (edgeInsetsType == SSEdgeInsetsTypeTitle) {
         self.titleEdgeInsets = edgeInsets;
-    }
-    else {
+    } else {
         self.imageEdgeInsets = edgeInsets;
     }
 }
+
 @end
