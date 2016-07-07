@@ -23,14 +23,13 @@ sizeWithAttributes:@{NSFontAttributeName:font}] : CGSizeZero;
 
     switch (type) {
         case SSImagePositionTypeLeft: {
-            CGFloat delta = spacing / 2.f;
-            self.imageEdgeInsets = UIEdgeInsetsMake(0, - delta, 0, delta);
-            self.titleEdgeInsets = UIEdgeInsetsMake(0, delta, 0, - delta);
+            self.titleEdgeInsets = UIEdgeInsetsMake(0, spacing, 0, 0);
+            self.imageEdgeInsets = UIEdgeInsetsMake(0, 0, 0, spacing);
             break;
         }
         case SSImagePositionTypeRight: {
-            self.titleEdgeInsets = UIEdgeInsetsMake(0, - (imageSize.width + spacing), 0, imageSize.width);
-            self.imageEdgeInsets = UIEdgeInsetsMake(0, titleSize.width, 0, - (titleSize.width + spacing));
+            self.titleEdgeInsets = UIEdgeInsetsMake(0, - imageSize.width, 0, imageSize.width + spacing);
+            self.imageEdgeInsets = UIEdgeInsetsMake(0, titleSize.width + spacing, 0, - titleSize.width);
             break;
         }
         case SSImagePositionTypeTop: {
@@ -116,7 +115,7 @@ sizeWithAttributes:@{NSFontAttributeName:font}] : CGSizeZero;
         }
     }
     
-    UIEdgeInsets edgeInsets = UIEdgeInsetsMake(vertivalDelta * verticalSignFlag, horizontalDelta * horizontalSignFlag, -vertivalDelta * verticalSignFlag, -horizontalDelta * horizontalSignFlag);
+    UIEdgeInsets edgeInsets = UIEdgeInsetsMake(vertivalDelta * verticalSignFlag, horizontalDelta * horizontalSignFlag, - vertivalDelta * verticalSignFlag, - horizontalDelta * horizontalSignFlag);
     if (edgeInsetsType == SSEdgeInsetsTypeTitle) {
         self.titleEdgeInsets = edgeInsets;
     } else {

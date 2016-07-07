@@ -44,6 +44,15 @@
     [self.imageUpTitleDownBtn setImagePositionWithType:SSImagePositionTypeTop spacing:0.f];
     [self.imageDownTitleUpBtn setImagePositionWithType:SSImagePositionTypeBottom spacing:0.f];
     [self.randomImageBtn setEdgeInsetsWithType:SSEdgeInsetsTypeImage marginType:SSMarginTypeBottomRight margin:0.f];
+    
+    /*
+     SSImagePositionTypeLeft or SSImagePositionTypeRight 两种风格contentHorizontalAlignment属性支持下列取值:
+     UIControlContentHorizontalAlignmentCenter,
+     UIControlContentHorizontalAlignmentLeft,
+     UIControlContentHorizontalAlignmentRight, 解注释可查看效果
+     */
+    //self.defaultStyleBtn.contentHorizontalAlignment = UIControlContentHorizontalAlignmentLeft;
+    //self.imageRightTitleLeftBtn.contentHorizontalAlignment = UIControlContentHorizontalAlignmentRight;
 }
 
 - (void)didReceiveMemoryWarning {
