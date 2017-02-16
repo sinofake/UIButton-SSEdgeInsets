@@ -16,7 +16,7 @@ Pod::Spec.new do |s|
   #
 
   s.name         = "UIButton-SSEdgeInsets"
-  s.version      = "0.1.3"
+  s.version      = "0.1.4"
   s.summary      = "图片在上，标题在下；标题在左，图片在右；随意调整图片或按钮的位置"
 
   # This description is used to generate tags and improve search results.
