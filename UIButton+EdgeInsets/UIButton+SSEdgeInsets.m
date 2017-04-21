@@ -20,7 +20,7 @@ sizeWithAttributes:@{NSFontAttributeName:font}] : CGSizeZero;
 - (void)setImagePositionWithType:(SSImagePositionType)type spacing:(CGFloat)spacing {
     CGSize imageSize = [self imageForState:UIControlStateNormal].size;
     CGSize titleSize = SS_SINGLELINE_TEXTSIZE([self titleForState:UIControlStateNormal], self.titleLabel.font);
-
+    
     switch (type) {
         case SSImagePositionTypeLeft: {
             self.titleEdgeInsets = UIEdgeInsetsMake(0, spacing, 0, 0);
@@ -28,6 +28,30 @@ sizeWithAttributes:@{NSFontAttributeName:font}] : CGSizeZero;
             break;
         }
         case SSImagePositionTypeRight: {
+            if (!CGRectEqualToRect(self.frame, CGRectZero)) {
+                /**
+                 这里需要真实的frame，autolayout通过下列方法可以拿到:
+                 1. layoutSubViews
+                 2. viewDidLayoutSubviews
+                 3. 父view调用layoutIfNeeded
+                 */
+                CGFloat minimumScaleFactor = 1.f;
+                if (self.titleLabel.adjustsFontSizeToFitWidth) {
+                    minimumScaleFactor = self.titleLabel.minimumScaleFactor;
+                }
+                
+                NSDictionary *attributes = @{NSFontAttributeName: self.titleLabel.font};
+                NSAttributedString *attributedString = [[NSAttributedString alloc] initWithString:[self titleForState:UIControlStateNormal]                                attributes:attributes];
+                NSStringDrawingContext *context = [[NSStringDrawingContext alloc] init];
+                context.minimumScaleFactor = minimumScaleFactor;
+                
+                CGRect frame = [attributedString boundingRectWithSize:CGSizeMake(CGRectGetWidth(self.frame) - (imageSize.width + spacing), CGRectGetHeight(self.frame))
+                                               options:NSStringDrawingUsesLineFragmentOrigin
+                                               context:context];
+                
+                titleSize = frame.size;
+            }
+            
             self.titleEdgeInsets = UIEdgeInsetsMake(0, - imageSize.width, 0, imageSize.width + spacing);
             self.imageEdgeInsets = UIEdgeInsetsMake(0, titleSize.width + spacing, 0, - titleSize.width);
             break;

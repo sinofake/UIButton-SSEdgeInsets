@@ -37,7 +37,6 @@
     [self.imageRightTitleLeftBtn setTitleColor:highlightedColor forState:UIControlStateHighlighted];
     [self.imageUpTitleDownBtn setTitleColor:highlightedColor forState:UIControlStateHighlighted];
     [self.imageDownTitleUpBtn setTitleColor:highlightedColor forState:UIControlStateHighlighted];
-
     
     [self.defaultStyleBtn setImagePositionWithType:SSImagePositionTypeLeft spacing:0.f];
     [self.imageRightTitleLeftBtn setImagePositionWithType:SSImagePositionTypeRight spacing:10.f];
@@ -46,13 +45,22 @@
     [self.randomImageBtn setEdgeInsetsWithType:SSEdgeInsetsTypeImage marginType:SSMarginTypeBottomRight margin:0.f];
     
     /*
-     SSImagePositionTypeLeft or SSImagePositionTypeRight 两种风格contentHorizontalAlignment属性支持下列取值:
-     UIControlContentHorizontalAlignmentCenter,
-     UIControlContentHorizontalAlignmentLeft,
-     UIControlContentHorizontalAlignmentRight, 解注释可查看效果
+     version:0.1.4
+     SSImagePositionTypeLeft or SSImagePositionTypeRight添加对contentHorizontalAlignment属性的支持，解注释可查看效果
      */
     //self.defaultStyleBtn.contentHorizontalAlignment = UIControlContentHorizontalAlignmentLeft;
     //self.imageRightTitleLeftBtn.contentHorizontalAlignment = UIControlContentHorizontalAlignmentRight;
+    
+    
+    
+    /**
+     version:0.1.5
+     SSImagePositionTypeLeft or SSImagePositionTypeRight添加对adjustsFontSizeToFitWidth属性的支持，解注释可查看效果
+     */
+    //self.imageRightTitleLeftBtn.titleLabel.minimumScaleFactor = 0.75f;
+    //self.imageRightTitleLeftBtn.titleLabel.adjustsFontSizeToFitWidth = YES;
+    //[self.imageRightTitleLeftBtn setTitle:@"做一个有益于人民的人" forState:UIControlStateNormal];
+    //[self.imageRightTitleLeftBtn setImagePositionWithType:SSImagePositionTypeRight spacing:10.f];
 }
 
 - (void)didReceiveMemoryWarning {
