@@ -8,18 +8,15 @@
 
 #import "UIButton+SSEdgeInsets.h"
 
-#if __IPHONE_OS_VERSION_MIN_REQUIRED >= 70000
-#define SS_SINGLELINE_TEXTSIZE(text, font) [text length] > 0 ? [text \
-sizeWithAttributes:@{NSFontAttributeName:font}] : CGSizeZero;
-#else
-#define SS_SINGLELINE_TEXTSIZE(text, font) [text length] > 0 ? [text sizeWithFont:font] : CGSizeZero;
-#endif
-
 @implementation UIButton (SSEdgeInsets)
 
 - (void)setImagePositionWithType:(SSImagePositionType)type spacing:(CGFloat)spacing {
     CGSize imageSize = [self imageForState:UIControlStateNormal].size;
-    CGSize titleSize = SS_SINGLELINE_TEXTSIZE([self titleForState:UIControlStateNormal], self.titleLabel.font);
+    CGSize titleSize = [self sizeForText:[self titleForState:UIControlStateNormal] font:self.titleLabel.font size:CGSizeMake(HUGE, HUGE) mode:self.titleLabel.lineBreakMode];
+    
+    if (self.titleLabel.adjustsFontSizeToFitWidth && (type == SSImagePositionTypeLeft || type == SSImagePositionTypeRight)) {
+        self.titleLabel.baselineAdjustment = UIBaselineAdjustmentAlignCenters;
+    }
     
     switch (type) {
         case SSImagePositionTypeLeft: {
@@ -35,21 +32,8 @@ sizeWithAttributes:@{NSFontAttributeName:font}] : CGSizeZero;
                  2. viewDidLayoutSubviews
                  3. 父view调用layoutIfNeeded
                  */
-                CGFloat minimumScaleFactor = 1.f;
-                if (self.titleLabel.adjustsFontSizeToFitWidth) {
-                    minimumScaleFactor = self.titleLabel.minimumScaleFactor;
-                }
-                
-                NSDictionary *attributes = @{NSFontAttributeName: self.titleLabel.font};
-                NSAttributedString *attributedString = [[NSAttributedString alloc] initWithString:[self titleForState:UIControlStateNormal]                                attributes:attributes];
-                NSStringDrawingContext *context = [[NSStringDrawingContext alloc] init];
-                context.minimumScaleFactor = minimumScaleFactor;
-                
-                CGRect frame = [attributedString boundingRectWithSize:CGSizeMake(CGRectGetWidth(self.frame) - (imageSize.width + spacing), CGRectGetHeight(self.frame))
-                                               options:NSStringDrawingUsesLineFragmentOrigin
-                                               context:context];
-                
-                titleSize = frame.size;
+                CGSize titleMaxSize = CGSizeMake(CGRectGetWidth(self.frame) - (imageSize.width + spacing), CGRectGetHeight(self.frame));
+                titleSize = [self sizeForText:[self titleForState:UIControlStateNormal] font:self.titleLabel.font size:titleMaxSize mode:self.titleLabel.lineBreakMode];
             }
             
             self.titleEdgeInsets = UIEdgeInsetsMake(0, - imageSize.width, 0, imageSize.width + spacing);
@@ -85,7 +69,7 @@ sizeWithAttributes:@{NSFontAttributeName:font}] : CGSizeZero;
 - (void)setEdgeInsetsWithType:(SSEdgeInsetsType)edgeInsetsType marginType:(SSMarginType)marginType margin:(CGFloat)margin {
     CGSize itemSize = CGSizeZero;
     if (edgeInsetsType == SSEdgeInsetsTypeTitle) {
-        itemSize = SS_SINGLELINE_TEXTSIZE([self titleForState:UIControlStateNormal], self.titleLabel.font);
+        itemSize = [self sizeForText:[self titleForState:UIControlStateNormal] font:self.titleLabel.font size:CGSizeMake(HUGE, HUGE) mode:self.titleLabel.lineBreakMode];
     } else {
         itemSize = [self imageForState:UIControlStateNormal].size;
     }
@@ -146,5 +130,32 @@ sizeWithAttributes:@{NSFontAttributeName:font}] : CGSizeZero;
         self.imageEdgeInsets = edgeInsets;
     }
 }
+
+
+#pragma mark - Drawing
+- (CGSize)sizeForText:(NSString *)text font:(UIFont *)font size:(CGSize)size mode:(NSLineBreakMode)lineBreakMode {
+    CGSize result;
+    if (!font) font = [UIFont systemFontOfSize:12];
+    if ([self respondsToSelector:@selector(boundingRectWithSize:options:attributes:context:)]) {
+        NSMutableDictionary *attr = [NSMutableDictionary new];
+        attr[NSFontAttributeName] = font;
+        if (lineBreakMode != NSLineBreakByWordWrapping) {
+            NSMutableParagraphStyle *paragraphStyle = [NSMutableParagraphStyle new];
+            paragraphStyle.lineBreakMode = lineBreakMode;
+            attr[NSParagraphStyleAttributeName] = paragraphStyle;
+        }
+        CGRect rect = [text boundingRectWithSize:size
+                                         options:NSStringDrawingUsesLineFragmentOrigin | NSStringDrawingUsesFontLeading
+                                      attributes:attr context:nil];
+        result = rect.size;
+    } else {
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wdeprecated-declarations"
+        result = [text sizeWithFont:font constrainedToSize:size lineBreakMode:lineBreakMode];
+#pragma clang diagnostic pop
+    }
+    return result;
+}
+
 
 @end

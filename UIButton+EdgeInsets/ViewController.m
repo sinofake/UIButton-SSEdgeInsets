@@ -54,8 +54,8 @@
     
     
     /**
-     version:0.1.5
-     SSImagePositionTypeLeft or SSImagePositionTypeRight添加对adjustsFontSizeToFitWidth属性的支持，解注释可查看效果
+     version:0.1.6
+     添加对adjustsFontSizeToFitWidth属性的支持，解注释可查看效果
      */
     //self.imageRightTitleLeftBtn.titleLabel.minimumScaleFactor = 0.75f;
     //self.imageRightTitleLeftBtn.titleLabel.adjustsFontSizeToFitWidth = YES;

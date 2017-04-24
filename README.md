@@ -12,9 +12,13 @@
 
 ### Change-log
 
+**Version 0.1.6** @ 17.04.24
+
+- 添加对`adjustsFontSizeToFitWidth`属性的支持.
+
 **Version 0.1.5** @ 17.04.21
 
-- SSImagePositionTypeLeft or SSImagePositionTypeRight添加对`adjustsFontSizeToFitWidth`属性的支持.
+- ~~SSImagePositionTypeLeft or SSImagePositionTypeRight添加对`adjustsFontSizeToFitWidth`属性的支持.~~
 
 **Version 0.1.4** @ 16.07.08
 
