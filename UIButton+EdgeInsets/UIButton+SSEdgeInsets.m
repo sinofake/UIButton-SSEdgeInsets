@@ -32,7 +32,16 @@
                  2. viewDidLayoutSubviews
                  3. 父view调用layoutIfNeeded
                  */
-                CGSize titleMaxSize = CGSizeMake(CGRectGetWidth(self.frame) - (imageSize.width + spacing), CGRectGetHeight(self.frame));
+                CGFloat titleMaxHeight;
+                NSLineBreakMode lineBreakMode = self.titleLabel.lineBreakMode;
+                if (lineBreakMode == NSLineBreakByWordWrapping || lineBreakMode == NSLineBreakByCharWrapping) {
+                    titleMaxHeight = HUGE;
+                } else {
+                    titleMaxHeight = self.titleLabel.font.pointSize;
+                }
+                
+                CGSize titleMaxSize = CGSizeMake(CGRectGetWidth(self.frame) - (imageSize.width + spacing), titleMaxHeight);
+                
                 titleSize = [self sizeForText:[self titleForState:UIControlStateNormal] font:self.titleLabel.font size:titleMaxSize mode:self.titleLabel.lineBreakMode];
             }
             
