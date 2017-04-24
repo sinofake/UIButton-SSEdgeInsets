@@ -12,7 +12,7 @@
 
 ### Change-log
 
-**Version 0.1.6** @ 17.04.24
+**Version 0.1.7** @ 17.04.24
 
 - 添加对`adjustsFontSizeToFitWidth`属性的支持.
 
